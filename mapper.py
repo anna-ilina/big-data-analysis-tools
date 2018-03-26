@@ -44,6 +44,6 @@ for line in sys.stdin:
             countNegativeWords += 1
 
     if countPositiveWords > countNegativeWords:
-        print("{}\t{}".format(productID, "positive-1")) #todo: are -1 necessary?
+        print("{0}\t{1}".format(productID, "positive-1")) #todo: are -1 necessary?
     else:
-        print("{}\t{}".format(productID, "negative-1"))
+        print("{0}\t{1}".format(productID, "negative-1"))

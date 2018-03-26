@@ -26,13 +26,9 @@ for line in sys.stdin:
             currentNegativeCount += valueCount
     else:
         if currentProductID:
-            percentagePositiveReviews = (float(currentPositiveCount) / (currentPositiveCount + currentNegativeCount))*100
-            if currentPositiveCount > currentNegativeCount:
-                print("{}\t{}-{}-{}".format(currentProductID, "positive", 
-                    str(currentPositiveCount), str(percentagePositiveReviews)))
-            else:
-                print("{}\t{}-{}-{}".format(currentProductID, "negative", 
-                    str(currentNegativeCount), str(percentagePositiveReviews)))
+            totalReviews = currentPositiveCount + currentNegativeCount
+            percentagePositiveReviews = (float(currentPositiveCount) / (totalReviews))*100
+            print("{0}\t{1}-{2}".format(currentProductID, totalReviews,percentagePositiveReviews))
         currentProductID = productID
         if value == "positive":
             currentPositiveCount = valueCount
@@ -43,10 +39,6 @@ for line in sys.stdin:
 
 # Output last word if needed
 if productID == currentProductID:
-    percentagePositiveReviews = (float(currentPositiveCount) / (currentPositiveCount + currentNegativeCount))*100
-    if currentPositiveCount > currentNegativeCount:
-        print("{}\t{}-{}-{}".format(currentProductID, "positive", 
-            str(currentPositiveCount), str(percentagePositiveReviews)))
-    else:
-        print("{}\t{}-{}-{}".format(currentProductID, "negative", 
-            str(currentNegativeCount), str(percentagePositiveReviews)))
+    totalReviews = currentPositiveCount + currentNegativeCount
+    percentagePositiveReviews = (float(currentPositiveCount) / (totalReviews))*100
+    print("{0}\t{1}-{2}".format(currentProductID, totalReviews,percentagePositiveReviews))
