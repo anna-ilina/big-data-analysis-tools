@@ -1,0 +1,6 @@
+test.py
+*.py
+negative.txt
+positive.txt
+reviews.tgz
+*.pdf
