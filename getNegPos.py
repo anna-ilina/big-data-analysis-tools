@@ -11,7 +11,7 @@ with open("positive.txt", "rb") as posFile:
 		else:
 			positiveWords.append(line)
 
-print (positiveWords)
+print ("positiveWords = " + str(positiveWords) + ";")
 
 # get negative words
 negativeWords = []
@@ -24,4 +24,8 @@ with open("negative.txt", "rb") as negFile:
 		else:
 			negativeWords.append(line)
 
-print (negativeWords)
+print ("negativeWords = " + str(negativeWords) + ";")
+
+with open("negPosWords.txt", 'wb') as outFile:
+	outFile.write("positiveWords = " + str(positiveWords) + ";\n")
+	outFile.write("negativeWords = " + str(negativeWords) + ";\n")

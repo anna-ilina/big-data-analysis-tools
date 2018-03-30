@@ -2,27 +2,29 @@
 import sys
 import string
 
-# get positive words
 positiveWords = []
+negativeWords = []
+
+# get positive words
 with open("positive.txt", "rb") as posFile:
-    lines = posFile.readlines()
-    for line in lines:
-        line = line.strip()
-        if line.startswith(';') or line == "":
-            pass
-        else:
-            positiveWords.append(line)
+	lines = posFile.readlines()
+	for line in lines:
+		line = line.strip()
+		if line.startswith(';') or line == "":
+			pass
+		else:
+			positiveWords.append(line)
 
 # get negative words
 negativeWords = []
 with open("negative.txt", "rb") as negFile:
-    lines = negFile.readlines()
-    for line in lines:
-        line = line.strip()
-        if line.startswith(';') or line == "":
-            pass
-        else:
-            negativeWords.append(line)
+	lines = negFile.readlines()
+	for line in lines:
+		line = line.strip()
+		if line.startswith(';') or line == "":
+			pass
+		else:
+			negativeWords.append(line)
 
 # input comes from STDIN (standard input)
 for line in sys.stdin:
@@ -44,6 +46,6 @@ for line in sys.stdin:
             countNegativeWords += 1
 
     if countPositiveWords > countNegativeWords:
-        print("{0}\t{1}".format(productID, "positive-1")) #todo: are -1 necessary?
+        print '%s\t%s' % (productID, "positive-1") #todo: are -1 necessary?
     else:
-        print("{0}\t{1}".format(productID, "negative-1"))
+        print '%s\t%s' % (productID, "negative-1")
