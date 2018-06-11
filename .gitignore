@@ -4,3 +4,5 @@ negative.txt
 positive.txt
 reviews.tgz
 *.pdf
+*.jpg
+*Log*
